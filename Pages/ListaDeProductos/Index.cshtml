@@ -1,0 +1,47 @@
+﻿@page
+@model PrimerVistazoASPNETcore.Pages.ListaDeProductos.IndexModel
+
+    <div class="container row">
+        <div class="col-9">
+            <h2 class="text-info">Lista de productos</h2>
+        </div>
+        <div class="col-3">
+            <a asp-page="CrearProducto" class="btn btn-info text-white">Crear producto</a>
+        </div>
+
+        <div class="col-12 border p-3 mt-3">
+            <form method="post">
+                @if (Model.Productos.Count() > 0)
+                {
+                <table>
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="Productos.FirstOrDefault().Nombre"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Productos.FirstOrDefault().Precio"></label>
+                        </th>
+                        <th>
+                            <label>Opciones</label>
+                        </th>
+                    </tr>
+                    @foreach (var prod in Model.Productos)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(mod => prod.Nombre)</td>
+                        
+                            <td>@Html.DisplayFor(mod => prod.Precio)</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">Eliminar</button>
+                                <a class="btn btn-success btn-sm text-white">Editar</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+                }
+                else {
+                    <p>¡No hay ningun producto disponible!</p>
+                }
+            </form>
+        </div>
+    </div>
