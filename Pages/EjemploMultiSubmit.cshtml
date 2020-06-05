@@ -1,0 +1,18 @@
+﻿@page
+@model PrimerVistazoASPNETcore.Pages.EjemploMultiSubmitModel
+@{
+    ViewData["Title"] = "EjemploMultiSubmit";
+}
+
+<h1>Ejemplo Multiples Submit</h1>
+<form method="post">
+    <!-- campos listados varios-->
+    <input type="submit" value="Envío #1" asp-page-handler="Tarea1"/>
+    <!-- Para diferencia a cada botón submit hay que agregar un tag helper asp-page-handler
+        conde se referencia al método post en particualr
+        -->
+
+    <input type="submit" value="Envío #2" asp-page-handler="Tarea2"/>
+</form>
+
+<!-- más ccntenido-->

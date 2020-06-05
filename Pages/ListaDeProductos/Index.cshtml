@@ -32,8 +32,8 @@
                         
                             <td>@Html.DisplayFor(mod => prod.Precio)</td>
                             <td>
-                                <button class="btn btn-danger btn-sm">Eliminar</button>
-                                <a class="btn btn-success btn-sm text-white">Editar</a>
+                                <button asp-page-handler="Eliminar" asp-route-id="@prod.Id" onclick="return confirm('¿Seguro que quieres eliminar el registro?')" class="btn btn-danger btn-sm">Eliminar</button>
+                                <a asp-page="EditarProducto" asp-route-id="@prod.Id" class="btn btn-success btn-sm text-white">Editar</a>
                             </td>
                         </tr>
                     }

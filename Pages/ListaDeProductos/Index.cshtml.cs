@@ -20,5 +20,16 @@ namespace PrimerVistazoASPNETcore.Pages.ListaDeProductos
         {
             Productos = await DB.Producto.ToListAsync();
         }
+
+        public async Task<IActionResult> OnPostEliminar(int id)
+        {
+            var ProductoAeliminar = await DB.Producto.FindAsync(id);
+            if (ProductoAeliminar == null)
+                return NotFound();
+            DB.Producto.Remove(ProductoAeliminar);
+            await DB.SaveChangesAsync();
+            return RedirectToPage("Index");
+        }
+        //Con esto ya vimos el CRUD, pues creamos registros,los consultamos, los editamos y eliminamos
     }
 }
