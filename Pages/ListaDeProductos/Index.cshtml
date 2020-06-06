@@ -44,4 +44,28 @@
                 }
             </form>
         </div>
+
+        <!-- A continuación usamos una tabla más estilizada -->
+        <div class="col-12" style="text-align:center">
+            <br/>
+            <span class="h3 text-info">A continuación usamos una tabla más estilizada</span>
+        </div>
+        <br/>
+
+        <div class="col-12 border p-3">
+            <table id="cargar_miTabla" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Precio</td>
+                        <td>Opciones</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
     </div>
+
+
+@section scripts{ 
+    <script src="~/js/listaDeProductos.js"></script>
+}

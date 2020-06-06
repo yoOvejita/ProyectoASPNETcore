@@ -27,6 +27,7 @@ namespace PrimerVistazoASPNETcore
         {
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddDbContext<MiDbContext>(opcion => opcion.UseSqlServer(Configuration.GetConnectionString("MiCadena")));
+            services.AddControllersWithViews();//Para el uso de los Controllers
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +56,7 @@ namespace PrimerVistazoASPNETcore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();//Para el uso de los Controllers
             });
         }
     }
